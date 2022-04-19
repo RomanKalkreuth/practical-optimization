@@ -1,6 +1,6 @@
 # practical-optimization
 
-This repository serves to provide code examples in Python for the exercises of the practical optimization module at TU Dortmund University.
+This repository serves to provide code examples in Python in addition to the exercises of the practical optimization module at TU Dortmund University.
 
 https://ls11-www.cs.tu-dortmund.de/people/rudolph/teaching/lectures/POKS/SS2022/lecture.jsp
 
