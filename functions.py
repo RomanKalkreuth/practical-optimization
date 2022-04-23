@@ -1,5 +1,5 @@
 """
-Generates evenly spaced or normal distrbuted data and calulates the function
+Generates evenly spaced or normal distributed data and calculates the function
 values which have been used in first and second exercise.
 
 The function are platted using matplotlib and plotly
