@@ -45,7 +45,6 @@ def func24(x, y):
     """
     return x * np.sin(x) + 3 * y ** 2
 
-
 def gen_normal(vars, mu, sigma, n):
     """
     Generate normal distributed date
@@ -131,8 +130,8 @@ def plot3d_plotly(X, Y, Z):
 
 
 # Function number and number of variables
-fn = 22
-vars = 1
+fn = 24
+vars = 2
 
 # Mean and standard deviation for normal distributed data
 mu = 0

@@ -6,6 +6,8 @@ critical value(s)
 import math
 import numpy as np
 import scipy.stats as stats
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 def difference(mean, mu):
@@ -42,6 +44,12 @@ def test_statistic(diff, error):
     """ Test statistic t """
     return diff / error
 
+def p_value(tval, df, type):
+   p = stats.t.sf(abs(tval), df=df)
+   if (type == "two"):
+       p = p * 2
+   return p
+
 
 def gen_normal(mu, sigma, n):
     """
@@ -61,23 +69,34 @@ def critical_value(alpha, df, type):
         q = 1.0 - alpha / 2.0
     return stats.t.ppf(q, df)
 
+def density_plot(size, c, t):
+    """
+    Creates a density plot using the seaborn package
+    """
+    tvals = stats.t.rvs(df=df, size=size)
+    density = sns.kdeplot(tvals, shade=True)
+    density.axvline(c, color='r')
+    density.axvline(-1 * c, color='r')
+    density.axvline(t, color='g')
+    plt.show()
+
 
 # Sample size, mean and standard deviation for normal distributed data
-mu = 0
+mu_norm, sigma = 0.0, 5.0
 n = 100
-sigma = 1
 
 # Test values: level of significance, hypothesized mean and test type
-mu = 0.5
-alpha = 0.05
+mu_hyp = 0.1
+alpha = 0.1
 type = "two"
 
 # Sample n normal distributed random values
-sample = gen_normal(mu, sigma, n)
+sample = gen_normal(mu_norm, sigma, n)
 
 # Perform the one sample t-test
 mean = avg(sample)
-diff = difference(mean, mu)
+mu_hyp = mean + 0.02
+diff = difference(mean, mu_hyp)
 std = stdev(sample, mean)
 error = sem(mean, n)
 df = dof(n)
@@ -86,9 +105,17 @@ t = test_statistic(diff, error)
 # Determine the critical value(s)
 c = critical_value(alpha, df, type)
 
+p = p_value(t,df, type)
+
 print("t: " + str(t))
 
 if (type == "two"):
     print("c: +/- " + str(c ** 2))
 else:
     print("c: " + str(c))
+
+print("p: " + str(p))
+
+# Create a density plot
+density_plot(100000, c, t)
+

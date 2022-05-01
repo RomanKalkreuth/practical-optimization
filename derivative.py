@@ -7,10 +7,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def generate(start, end, step):
-    """Generates equally spaced data """
+    """ Generates equally spaced data """
     X = np.arange(start, end, step)
     return X
-
 
 def function(X, func):
     """ Calculates function values for the sine and cosinus function """

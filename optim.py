@@ -49,6 +49,3 @@ fs = quadratic_sum(sol)
 # Print the total evaluations and the solution
 print('Total Evaluations: %d' % res['nfev'])
 print('Solution: f(%s) = %.5f' % (sol, fs))
-
-
-
