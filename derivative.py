@@ -13,10 +13,16 @@ def generate(start, end, step):
 
 def function(X, func):
     """ Calculates function values for the sine and cosinus function """
+
+    # If the selected function is sine
     if func == "sin":
+        # Use numpy to calculate the sine of X
         Y = np.sin(X)
+    # Or if the selected function is cosine
     elif func == "cos":
+        # Use numpy to calculate the cosine of X
         Y = np.cos(X)
+    # Otherwise raise a value error
     else:
         raise ValueError("Unknown function")
     return Y
@@ -24,12 +30,20 @@ def function(X, func):
 
 def derive(X, Y):
     """ Calculates the first derivative of X """
+
+    # Determine the dimension of X
     dim = len(X)
+
+    # Init a numpy array with zeros
     D = np.zeros(dim, dtype=X.dtype)
+
+    # Iterate over X and Y
     for i, (vx, vy) in enumerate(zip(X, Y)):
         if i < (dim - 1):
+            # Determine the difference for x and y at i and i+1
             dx = X[i] - X[i + 1]
             dy = Y[i] - Y[i + 1]
+        # Using dx and dy, calculate the derivation at point i
         D[i] = dy / dx
     return D
 
