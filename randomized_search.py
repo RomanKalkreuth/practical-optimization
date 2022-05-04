@@ -1,5 +1,11 @@
 """
-Randomized search from the third exercise
+Implementation of the randomized search algorithm
+of the third exercise,
+
+Author:         Roman Kalkreuth, roman.kalkreuth@tu-dortmund.de
+                https://orcid.org/0000-0003-1449-5131
+                https://ls11-www.cs.tu-dortmund.de/staff/kalkreuth
+                https://twitter.com/RomanKalkreuth
 """
 import numpy as np
 import benchmarks as bm
@@ -38,7 +44,7 @@ def randomized_search(f, x0, s0, eps):
 
 rep = 100
 s0 = 1
-eps = 0.1
+eps = 0.01
 
 res = np.zeros(rep)
 
@@ -53,6 +59,5 @@ for i in range(0,rep-1):
     x0 = np.random.uniform(-10,10)
     r = randomized_search(f, x0, s0, eps)
     res.append(r)
-
 
 print(res)

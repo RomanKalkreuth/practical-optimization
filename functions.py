@@ -1,8 +1,12 @@
 """
 Generates evenly spaced or normal distributed data and calculates the function
 values which have been used in first and second exercise.
-
 The function are platted using matplotlib and plotly
+
+Author:         Roman Kalkreuth, roman.kalkreuth@tu-dortmund.de
+                https://orcid.org/0000-0003-1449-5131
+                https://ls11-www.cs.tu-dortmund.de/staff/kalkreuth
+                https://twitter.com/RomanKalkreuth
 """
 
 import numpy as np

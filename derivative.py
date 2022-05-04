@@ -1,6 +1,11 @@
 """
 Generates equally spaced data and calculates the first derivative.
-Pyplot is used to plot the functions."
+Pyplot is used to plot the functions.
+
+Author:         Roman Kalkreuth, roman.kalkreuth@tu-dortmund.de
+                https://orcid.org/0000-0003-1449-5131
+                https://ls11-www.cs.tu-dortmund.de/staff/kalkreuth
+                https://twitter.com/RomanKalkreuth
 """
 
 import numpy as np
@@ -39,7 +44,7 @@ def derive(X, Y):
 
     # Iterate over X and Y
     for i, (vx, vy) in enumerate(zip(X, Y)):
-        if i < (dim - 1):
+        if i < dim - 1:
             # Determine the difference for x and y at i and i+1
             dx = X[i] - X[i + 1]
             dy = Y[i] - Y[i + 1]
