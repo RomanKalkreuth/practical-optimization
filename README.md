@@ -1,6 +1,6 @@
 # Practical Optimization of Complex Systems
 
-This repository provides code examples written in Python in addition to the exercises of the practical optimization module at TU Dortmund University.
+This repository provides code examples written in Python in addition to the exercises and introductory course of the practical optimization lecture at TU Dortmund University.
 
 ## About 
 
@@ -11,5 +11,7 @@ In the optimization of complex systems, especially in engineering sciences, it u
 https://ls11-www.cs.tu-dortmund.de/people/rudolph/teaching/lectures/POKS/SS2022/lecture.jsp
 
 https://ls11-www.cs.tu-dortmund.de/de/rudolph/lehre/po22
+
+
 
 
