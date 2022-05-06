@@ -8,6 +8,7 @@ Author:         Roman Kalkreuth, roman.kalkreuth@tu-dortmund.de
                 https://twitter.com/RomanKalkreuth
 """
 
+
 def fibonacci(n):
     # Validate the input
     if not isinstance(n, int):

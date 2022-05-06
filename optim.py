@@ -11,6 +11,7 @@ Author:         Roman Kalkreuth, roman.kalkreuth@tu-dortmund.de
 import numpy as np
 from scipy.optimize import minimize
 
+
 def quadratic_sum(X):
     """ Quadratic sum problem """
     s = 0
@@ -38,6 +39,7 @@ def schwefel(X):
             s2 += x ** 2
     s1 += s2 ** 2
     return s1
+
 
 dim = 5
 

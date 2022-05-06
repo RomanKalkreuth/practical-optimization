@@ -7,9 +7,9 @@ Author:         Roman Kalkreuth, roman.kalkreuth@tu-dortmund.de
                 https://twitter.com/RomanKalkreuth
 """
 
+import matplotlib.pyplot as plt
 import numpy as np
 import statsmodels.api as sm
-import matplotlib.pyplot as plt
 
 np.random.seed(0)
 
@@ -17,8 +17,8 @@ mean, sigma, size = 0, 1, 100
 low, high = 0, 1
 
 # Sample normal and uniform distributed values
-dn = np.random.normal(mean,sigma, size)
-du = np.random.uniform(low,high, size)
+dn = np.random.normal(mean, sigma, size)
+du = np.random.uniform(low, high, size)
 
 # Create the qqplot
 fig = sm.qqplot(du, line='45')

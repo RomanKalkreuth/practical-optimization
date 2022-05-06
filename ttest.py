@@ -9,9 +9,10 @@ Author:         Roman Kalkreuth, roman.kalkreuth@tu-dortmund.de
 """
 
 import math
+
+import matplotlib.pyplot as plt
 import numpy as np
 import scipy.stats as stats
-import matplotlib.pyplot as plt
 import seaborn as sns
 
 
@@ -49,11 +50,12 @@ def test_statistic(diff, error):
     """ Test statistic t """
     return diff / error
 
+
 def p_value(tval, df, type):
-   p = stats.t.sf(abs(tval), df=df)
-   if (type == "two"):
-       p = p * 2
-   return p
+    p = stats.t.sf(abs(tval), df=df)
+    if (type == "two"):
+        p = p * 2
+    return p
 
 
 def gen_normal(mu, sigma, n):
@@ -73,6 +75,7 @@ def critical_value(alpha, df, type):
     elif type == "two":
         q = 1.0 - alpha / 2.0
     return stats.t.ppf(q, df)
+
 
 def density_plot(size, c, t):
     """
@@ -110,7 +113,7 @@ t = test_statistic(diff, error)
 # Determine the critical value(s)
 c = critical_value(alpha, df, type)
 
-p = p_value(t,df, type)
+p = p_value(t, df, type)
 
 print("t: " + str(t))
 
@@ -123,4 +126,3 @@ print("p: " + str(p))
 
 # Create a density plot
 density_plot(100000, c, t)
-

@@ -8,13 +8,15 @@ Author:         Roman Kalkreuth, roman.kalkreuth@tu-dortmund.de
                 https://twitter.com/RomanKalkreuth
 """
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 def generate(start, end, step):
     """ Generates equally spaced data """
     X = np.arange(start, end, step)
     return X
+
 
 def function(X, func):
     """ Calculates function values for the sine and cosinus function """
@@ -52,9 +54,10 @@ def derive(X, Y):
         D[i] = dy / dx
     return D
 
+
 # Literals for the generation of the X data
 fac = 4
-step  = 0.1
+step = 0.1
 
 # Generate data from 0 two fac * pi equally spaced with
 # predefined step size (step)

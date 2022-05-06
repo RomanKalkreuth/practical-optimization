@@ -8,7 +8,9 @@ Author:         Roman Kalkreuth, roman.kalkreuth@tu-dortmund.de
                 https://twitter.com/RomanKalkreuth
 """
 import numpy as np
+
 import benchmarks as bm
+
 
 def randomized_search(f, x0, s0, eps):
     """
@@ -55,8 +57,8 @@ f = benchmarks.func31
 res = list()
 
 # Iterate over the predefined number of repetitions
-for i in range(0,rep-1):
-    x0 = np.random.uniform(-10,10)
+for i in range(0, rep - 1):
+    x0 = np.random.uniform(-10, 10)
     r = randomized_search(f, x0, s0, eps)
     res.append(r)
 
