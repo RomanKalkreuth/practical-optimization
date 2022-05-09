@@ -3,13 +3,13 @@ Benchmark class that contains the benchmarking functions
 for the exercises
 
 Author:         Roman Kalkreuth, roman.kalkreuth@tu-dortmund.de
- 	            https://orcid.org/0000-0003-1449-5131
+                https://orcid.org/0000-0003-1449-5131
                 https://ls11-www.cs.tu-dortmund.de/staff/kalkreuth
-          	    https://twitter.com/RomanKalkreuth
+                https://twitter.com/RomanKalkreuth
 """
 
-import math
 
+import math
 import numpy as np
 
 
@@ -30,7 +30,9 @@ class Benchmarks:
         return s
 
     def schwefel(self, X):
-        """ Schwefel's problem """
+        """
+        Schwefel's problem
+        """
         s1 = 0
         s2 = 0
         n = len(X)
@@ -42,16 +44,27 @@ class Benchmarks:
         return s1
 
     def staircase(self, X):
-        """ Staircase function problem """
+        """
+        Staircase function problem
+        """
         s = 0
         for i, x in enumerate(X):
             s += math.floor(x ** 2)
 
         return s
 
-    # def rastrigen(self, X):
-    #
-    #   return X
+    def rastrigen(self, X):
+        """
+        Rastrigen function problem
+        """
+
+        n = len(X)
+        s = 0
+        for i, x in enumerate(X):
+            s = x ** 2 * math.cos( 2 * math.pi * x)
+
+        s +=  10 * n
+        return s
 
     def func11(self, x, y):
         """
@@ -101,20 +114,26 @@ class Benchmarks:
         """
         return x ** 2 + y ** 2
 
-    def gen_espaced(self, vars, min, max, n):
+    def func41(self, x, y):
+        """
+        Function 1 from the fourth exercise
+        """
+        return x ** 3 - y ** 3 + y ** 2 + 1000 * np.cos(x) * np.sin(y)
+
+    def gen_espaced(self, nvars, min, max, n):
         """
         Generate evenly spaced data
         """
-        D = np.zeros((vars, n))
-        for i in range(0, vars):
+        D = np.zeros((nvars, n))
+        for i in range(0, nvars):
             D[i,] = np.linspace(min, max, n)
         return D
 
-    def gen_normal(self, vars, mu, sigma, n):
+    def gen_normal(self, nvars, mu, sigma, n):
         """
         Generate normal distributed date
         """
-        D = np.zeros((vars, n))
-        for i in range(0, vars):
+        D = np.zeros((nvars, n))
+        for i in range(0, nvars):
             D[i,] = np.random.normal(mu, sigma, n)
         return D
