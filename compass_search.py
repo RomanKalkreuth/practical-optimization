@@ -61,6 +61,8 @@ def search(f, x0, s0, theta, tol=0.001, opt=0, kmax=1000):
         # Increase the iterator counter
         k = k + 1
 
+        print("Iteration: " + str(k) + " - Function value: " + str(fx))
+
         # Trigger the max evaluation termination criterion when
         # the evaluation budget has been exceeded
         if k >= kmax:
@@ -89,9 +91,8 @@ theta = 0.5
 benchmarks = bm.Benchmarks()
 f = benchmarks.schwefel
 
-rep = 10
+# Choose the init parameter values uniformly at random
+x0 = np.random.randint(xmin, xmax, dim)
 
-for i in range(rep):
-    x0 = np.random.randint(xmin, xmax, dim)
-    res = search(f, x0, s0, theta)
-    print(res)
+# Perform the search
+res = search(f, x0, s0, theta)

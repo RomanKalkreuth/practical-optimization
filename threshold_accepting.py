@@ -33,8 +33,7 @@ def threshold_accepting(x0: np.array, t0: int, g: float, dim: int, iter: int, fu
 
     # Determine init function value
     fxk = func(xk)
-    
-    k = 0
+
     # Iterate over the number of iterations
     for i in range(iter):
         # Determine zk from multivariate normal distribution
@@ -50,7 +49,8 @@ def threshold_accepting(x0: np.array, t0: int, g: float, dim: int, iter: int, fu
             fxk = fyk
         # Reduce the acceptance threshold
         tk = tk * g
-        k = k + 1
+
+        print("Iteration: " + str(i + 1) + " - Function value: " + str(fxk))
 
     return xk, fxk
 

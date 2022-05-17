@@ -162,7 +162,7 @@ def search(dim: int, func, strategy: str, sigma: int = 1.0, min: int = -10, max:
         best_individual = selection(population)
         parent = best_individual
 
-        print("Generation: " + str(i + 1) + " / Best fitness: " + str(best_individual[2]))
+        print("Generation: " + str(i + 1) + " - Best fitness: " + str(best_individual[2]))
 
     best_solution = parent[0]
 
@@ -177,7 +177,7 @@ dim = 2
 lam = 4
 evals = 400
 sigma = 1.0
-strategy = "comma"
+strategy = "plus"
 
 # Instantiate an object of the benchmark class
 benchmarks = bm.Benchmarks()
