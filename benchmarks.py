@@ -128,6 +128,14 @@ class Benchmarks:
         y = d[1]
         return 1.5 * x ** 2 + y ** 2 + 21 * np.sin(x) * np.cos(y) + 0.5 * (abs(x) + abs(y))
 
+    def func61(self, d):
+        """
+        Function 1 from the sixth exercise
+        """
+        x = d[0]
+        y = d[1]
+        return x ** 3 - y ** 3 + y ** 2 + 1000 * np.cos(x) * np.sin(y)
+
     def gen_espaced(self, nvars, min, max, n):
         """
         Generate evenly spaced data
